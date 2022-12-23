@@ -1,0 +1,15 @@
+### Centos ###
+
+yum install pptp pptp-setup
+
+pptpsetup –create config –server [server address] –username [username] –password [pwd] –encrypt
+
+modprobe ppp_mppe
+
+modprobe nf_conntrack_pptp
+
+pppd call config  <-- เรียกไฟล์ config มารันเพื่อเชื่อม VPN
+
+killall pppd  <-- ยกเลิกเชื่อมต่อ VPN
+
+----------------------------------------------------------------------------------------------------------------------

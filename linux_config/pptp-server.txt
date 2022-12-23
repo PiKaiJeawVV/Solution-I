@@ -1,0 +1,31 @@
+1.yum install ppp
+2.http://poptop.sourceforge.net/yum/stable/packages/ ดาวโหลดไฟล์ rmp จาก ให้ตรงกับรุ่น linux
+3.copy link ที่โหลด มาเมื่อกี้มาใส่ในlinux 
+ -wget http://poptop.sourceforge.net/yum/stable/packages/
+4.โหลดมาเสร้จแล้วให้ติดตั้งซะนะ 
+ -rpm -i (ชื่อไฟล์)
+5.vi /etc/pptpd.conf
+แก้บรรทัดล่างสุด 
+localip 192.168.100.254 <- อะไรก็ได้ IPของ Interface
+remoteip 192.168.100.1-10 <- เลือก range ของ IP
+
+6.vi /etc/ppp/options.pptpd
+กำหนด DNS
+ให้เพิ่มบรรทัดล่างสุด  ms-dns 8.8.8.8 หรือ dns ของต้นเอง
+
+7.vi /etc/ppp/chap-secrets
+config user ที่จะเชื่อมต่อเข้ามา
+(ชื่อ)  pptpd (รหัส)  *
+
+8.start service pptpd
+-service pptpd start
+
+9.เช็คว่า pptpd รันแล้วหรือยัง
+ps -ef | grep pptpd
+
+10.###iptables 
+-iptables -I INPUT -m tcp -p tcp --dport 1723 -j ACCEPT
+
+##1723 = port pptp
+
+route add -net 43.229.71.10 netmask 255.255.255.255 gw 10.0.0.52
