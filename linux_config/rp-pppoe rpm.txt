@@ -1,0 +1,14 @@
+https://github.com/dfskoll/rp-pppoe
+
+
+Unpack rp-pppoe or clone this git repo
+
+Change to source directory: cd src
+
+Configure: ./configure --enable-plugin
+
+Compile: make
+
+Install -- this step must be done as root: make install
+
+Read doc/HOW-TO-CONNECT
