@@ -41,3 +41,5 @@ for oo,ii in zip(Oltip_list,FixIp_list):
         values = 2
         print("Can't find IP")
         print(values)
+
+db_nms2.close()
