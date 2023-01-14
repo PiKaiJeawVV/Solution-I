@@ -55,5 +55,8 @@ for oo,ii in zip(Oltip_list,FixIp_list):
         print("Can't find IP")
         print(values)
 
+<<<<<<< HEAD:Checkhost_WithoutCacti/code/ping_host.py
 db_cacti3.close()
+=======
+>>>>>>> 8b66d36b73037a246bc0cd8927b8aec0014f1b3a:Checkhost_WithoutCacti/code/re-route.py
 db_nms2.close()
